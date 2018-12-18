@@ -19,7 +19,7 @@ const LogoSection = styled.div`
 `;
 
 const Image = styled.img`
-  max-width: 90%;
+  max-width: 100%;
   width: 600px;
 `;
 
@@ -42,14 +42,14 @@ const SocialLink = styled.a`
 
 function Logo() {
   return (
-    <LogoSection bg="https://res.cloudinary.com/gojutin/image/upload/v1544980240/veganworks/veganworks_display.png">
+    <LogoSection bg="https://res.cloudinary.com/gojutin/image/upload/v1545162899/veganworks/veganworks_display.png">
       <AnimatedItem
         topOffset="200px"
         enterAnimation={zoomIn}
         leaveAnimation={zoomOut}
       >
         <Image
-          src="https://res.cloudinary.com/gojutin/image/upload/v1544936219/veganworks-logo.png"
+          src="https://res.cloudinary.com/gojutin/image/upload/v1545163193/veganworks/veganworks-logo.png"
           alt="veganworks logo"
         />
         <Slogan className="cursive white">

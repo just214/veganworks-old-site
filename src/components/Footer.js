@@ -15,9 +15,7 @@ const StyledFooter = styled.div`
 function Footer() {
   return (
     <StyledFooter>
-      <p>info@veganworks.com</p>
-      <p>VeganWorks, Inc. 2018</p>
-      <p>631-403-0362</p>
+      <p>VeganWorks, Inc. 2017-2018</p>
     </StyledFooter>
   );
 }

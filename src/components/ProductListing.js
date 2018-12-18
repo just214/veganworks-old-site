@@ -5,16 +5,17 @@ import { FaAmazon } from 'react-icons/fa';
 
 const Card = styled.div`
   margin: 5px;
-  background-color: #f7f7f7;
+  /* background-color: #f7f7f7;
   border-radius: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   :hover {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
-  }
+  } */
 `;
 
 const ShopButton = styled.button`
+  background-color: white;
   margin: 15px;
   border-radius: 20px;
   font-size: 16px;
@@ -25,6 +26,9 @@ const ShopButton = styled.button`
     color: #333;
     display: flex;
     align-items: center;
+  }
+  :hover {
+    background-color: #f3f3f3;
   }
 `;
 
@@ -58,7 +62,7 @@ function ProductListing({ item }) {
       <div>
         <ShopButton>
           <a href={item.link} rel="noopener noreferrer" target="_blank">
-            <FaAmazon size="16" /> &nbsp;Shop Now
+            <FaAmazon color="#333" size="20" /> &nbsp;Shop Now
           </a>
         </ShopButton>
       </div>

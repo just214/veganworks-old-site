@@ -4,7 +4,7 @@ import { fadeIn, fadeOut } from 'react-animations';
 import AnimatedItem from './AnimatedItem';
 
 const Wrapper = styled.div`
-  background: url('https://res.cloudinary.com/gojutin/image/upload/v1545160720/veganworks/community-solidarity-collage.jpg')
+  background: url('https://res.cloudinary.com/gojutin/image/upload/v1545162899/veganworks/community-solidarity-collage.png')
     no-repeat center center fixed;
   background-size: cover;
   width: 100%;
