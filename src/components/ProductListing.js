@@ -25,7 +25,8 @@ const Tag = styled.span`
   padding: 3px 6px;
   border-radius: 20px;
   margin: 5px;
-  background-color: lightblue;
+  color: ${props => props.color || '#333'};
+  background-color: ${props => props.bg || 'lightblue'};
   font-size: 12px;
 `;
 
@@ -37,10 +38,26 @@ function ProductListing({ item }) {
         alt={item.title}
         style={{ maxHeight: '60vh', maxWidth: '100%' }}
       />
-      <h2>
+      <h2 style={{ margin: '5px' }}>
         <b>{item.title}</b>
       </h2>
-      <h2>{item.price}</h2>
+
+      <div>
+        <small>{item.availability}</small>
+      </div>
+
+      {item.salePrice ? (
+        <h2 style={{ margin: '5px' }}>
+          <span style={{ textDecoration: 'line-through' }}>{item.price}</span>{' '}
+          <span style={{ color: 'green' }}>{item.salePrice} </span>
+          <Tag bg="green" color="white">
+            Sale
+          </Tag>
+        </h2>
+      ) : (
+        <h2 style={{ margin: '5px' }}>{item.price}</h2>
+      )}
+
       <div
         style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
       >
@@ -48,6 +65,7 @@ function ProductListing({ item }) {
           <Tag key={tag}>{tag}</Tag>
         ))}
       </div>
+
       <div>
         <ShopButton>
           <a

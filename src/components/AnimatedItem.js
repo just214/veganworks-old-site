@@ -49,6 +49,7 @@ AnimatedItem.propTypes = {
   topOffset: PropTypes.string,
   enterAnimation: PropTypes.object.isRequired,
   leaveAnimation: PropTypes.object.isRequired,
+  loop: PropTypes.bool,
 };
 
 AnimatedItem.defaultProps = {

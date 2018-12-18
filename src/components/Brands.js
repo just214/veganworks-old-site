@@ -4,6 +4,8 @@ import { Container, Row, Col } from 'react-grid-system';
 import { brands } from '../data';
 import { Image } from 'cloudinary-react';
 import SectionTitle from './SectionTitle';
+import AnimatedItem from './AnimatedItem';
+import { pulse } from 'react-animations';
 
 const Wrapper = styled.div`
   text-align: center;
@@ -36,14 +38,14 @@ function Brands() {
               xl={3}
               style={{ marginTop: '30px' }}
             >
-              <div>
+              <AnimatedItem enterAnimation={pulse} leaveAnimation={pulse} loop>
                 <Image
                   cloudName="gojutin"
                   height={80}
                   publicId={brand}
                   alt={brand}
                 />
-              </div>
+              </AnimatedItem>
             </Col>
           ))}
         </Row>
