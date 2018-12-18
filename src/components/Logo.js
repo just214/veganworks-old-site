@@ -44,7 +44,7 @@ const SocialLink = styled.a`
 
 function Logo() {
   return (
-    <LogoSection bg="https://res.cloudinary.com/gojutin/image/upload/v1545162899/veganworks/veganworks_display.png">
+    <LogoSection bg="https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545162899/veganworks/veganworks_display.png">
       <AnimatedItem
         topOffset="200px"
         enterAnimation={zoomIn}

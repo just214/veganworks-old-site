@@ -7,7 +7,6 @@ import SectionTitle from './SectionTitle';
 
 const Wrapper = styled.div`
   text-align: center;
-
   margin: 10px;
   padding: 10px;
   min-height: 300px;
