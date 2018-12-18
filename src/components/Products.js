@@ -8,11 +8,18 @@ import { products } from '../data';
 
 const Section = styled.div`
   padding: 10px;
-
   max-width: 100%;
   height: 100%;
   background-color: white;
   text-align: center;
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff,
+    #fbfbfb,
+    #f8f8f8,
+    #f4f4f4,
+    #f1f1f1
+  );
 `;
 
 Section.propTypes = {

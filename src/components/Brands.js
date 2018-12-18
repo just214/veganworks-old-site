@@ -7,9 +7,17 @@ import SectionTitle from './SectionTitle';
 
 const Wrapper = styled.div`
   text-align: center;
-  margin: 10px;
   padding: 10px;
   min-height: 300px;
+
+  background-image: linear-gradient(
+    to bottom,
+    #f1f1f1,
+    #fafaff,
+    #f3f6ff,
+    #ebf2ff,
+    #e1eeff
+  );
 `;
 
 function Brands() {

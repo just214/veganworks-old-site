@@ -63,7 +63,7 @@ function Logo() {
             target="_blank"
             href="https://amzn.to/2QFidX3"
           >
-            <FaAmazon color="lightblue" size="50" />
+            <FaAmazon className="social" color="lightblue" size="50" />
           </SocialLink>
           <SocialLink
             rel="noopener noreferrer"
@@ -77,7 +77,7 @@ function Logo() {
             target="_blank"
             href="https://facebook.com/veganworkshq"
           >
-            <FaFacebook color="lightblue" size="45" />
+            <FaFacebook className="social" color="lightblue" size="45" />
           </SocialLink>
         </SocialWrapper>
       </AnimatedItem>

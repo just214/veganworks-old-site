@@ -26,5 +26,9 @@ body {
 }
 
 .social:hover {
-  color: rgb(162, 209, 224) !important;
+  color: rgb(126, 189, 240) !important;
+}
+
+a {
+  color: lightblue;
 }
