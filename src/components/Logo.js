@@ -6,8 +6,8 @@ import AnimatedItem from '../components/AnimatedItem';
 
 const LogoSection = styled.div`
   display: flex;
-  width: 100%;
   height: 100%;
+
   min-height: 100vh;
   background-color: #333;
   justify-content: center;

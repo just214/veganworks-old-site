@@ -4,11 +4,12 @@ import { fadeIn, fadeOut } from 'react-animations';
 import AnimatedItem from './AnimatedItem';
 
 const Wrapper = styled.div`
-  background: url('https://res.cloudinary.com/gojutin/image/upload/v1545162899/veganworks/community-solidarity-collage.png')
-    no-repeat center center fixed;
+  background: url('https://res.cloudinary.com/gojutin/image/upload/v1545165691/veganworks/community-solidarity-collage.png')
+    no-repeat center center;
   background-size: cover;
-  width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +47,7 @@ function Community() {
               rel="noopener noreferrer"
             >
               <img
-                width="60%"
+                width="70%"
                 src="https://res.cloudinary.com/gojutin/image/upload/v1545156921/veganworks/community-solidarity-logo.png"
                 alt="Community Solidarity- Americas largest Vegetarian hunger relief program."
               />
