@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import ProductListing from './ProductListing';
+import SectionTitle from './SectionTitle';
 import { products } from '../data';
 
 const Section = styled.div`
@@ -23,7 +24,7 @@ Section.propTypes = {
 function Products() {
   return (
     <Section>
-      <h1 className="cursive">Our Snack Boxes</h1>
+      <SectionTitle>Our Snack Boxes</SectionTitle>
       <Container style={{ padding: '15px' }}>
         <Row>
           {products.map(item => (

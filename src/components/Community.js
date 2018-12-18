@@ -6,13 +6,17 @@ import AnimatedItem from './AnimatedItem';
 const Wrapper = styled.div`
   background: url('https://res.cloudinary.com/gojutin/image/upload/v1545165691/veganworks/community-solidarity-collage.png')
     no-repeat center center;
-  background-size: cover;
+
   max-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 768px) {
+    background-size: cover;
+    background-attachment: fixed;
+  }
 `;
 
 const Card = styled.div`

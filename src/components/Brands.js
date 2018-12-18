@@ -2,29 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { brands } from '../data';
-
 import { Image } from 'cloudinary-react';
+import SectionTitle from './SectionTitle';
 
 const Wrapper = styled.div`
   text-align: center;
-  border: 6px solid #444;
-  border-radius: 30px;
+
   margin: 10px;
   padding: 10px;
   min-height: 300px;
-  background-image: linear-gradient(
-    to top,
-    #f3e7e9 0%,
-    #e3eeff 99%,
-    #e3eeff 100%
-  );
 `;
 
 function Brands() {
   return (
     <Wrapper>
       <Container style={{ padding: '15px' }}>
-        <h1 className="cursive">Bringing you our favorite brands</h1>
+        <SectionTitle>Bringing you our favorite brands</SectionTitle>
         <Row>
           {brands.map(brand => (
             <Col
