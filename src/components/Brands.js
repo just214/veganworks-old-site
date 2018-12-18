@@ -38,7 +38,9 @@ function Brands() {
               xl={3}
               style={{ marginTop: '30px' }}
             >
-              <Image cloudName="gojutin" height={70} publicId={brand} />
+              <div>
+                <Image cloudName="gojutin" height={80} publicId={brand} />
+              </div>
             </Col>
           ))}
         </Row>

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
-import Waypoint from 'react-waypoint';
+import React from 'react';
+import styled from 'styled-components';
 import { zoomIn, zoomOut } from 'react-animations';
 import { FaTwitter, FaAmazon, FaFacebook } from 'react-icons/fa';
+import AnimatedItem from '../components/AnimatedItem';
 
 const LogoSection = styled.div`
   display: flex;
@@ -16,25 +16,6 @@ const LogoSection = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-`;
-
-const enterAnimation = keyframes`${zoomIn}`;
-const leaveAnimation = keyframes`${zoomOut}`;
-
-const AnimatedWrapper = styled.div`
-  display: ${props => (!props.type ? 'none' : 'block')};
-  animation: 0.8s
-    ${props => {
-      switch (props.type) {
-        case 'enter':
-          return enterAnimation;
-        case 'leave':
-          return leaveAnimation;
-        default:
-          return 'none';
-      }
-    }}
-    forwards;
 `;
 
 const Image = styled.img`
@@ -60,60 +41,44 @@ const SocialLink = styled.a`
 `;
 
 function Logo() {
-  const [showAnimation, setShowAnimation] = useState(false);
-  const [animationType, setAnimationType] = useState('');
-
-  function handleEnter() {
-    console.log('Enter');
-    setAnimationType('enter');
-    setShowAnimation(true);
-  }
-
-  function handleLeave() {
-    console.log('LEAVE');
-    setAnimationType('leave');
-    setShowAnimation(false);
-  }
-
   return (
     <LogoSection bg="https://res.cloudinary.com/gojutin/image/upload/v1544980240/veganworks/veganworks_display.png">
-      <Waypoint onEnter={handleEnter} onLeave={handleLeave} topOffset="200px">
-        <div>
-          <AnimatedWrapper show={showAnimation} type={animationType}>
-            <Image
-              src="https://res.cloudinary.com/gojutin/image/upload/v1544936219/veganworks-logo.png"
-              alt="veganworks logo"
-            />
-
-            <Slogan className="cursive white">
-              We make delicious vegan snack boxes
-            </Slogan>
-            <SocialWrapper>
-              <SocialLink
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://amzn.to/2QFidX3"
-              >
-                <FaAmazon color="lightblue" size="50" />
-              </SocialLink>
-              <SocialLink
-                rel="noopener noreferrer"
-                target="_blank"
-                href="http://bit.ly/2PLgvOe"
-              >
-                <FaTwitter className="social" color="lightblue" size="50" />
-              </SocialLink>
-              <SocialLink
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://facebook.com/veganworkshq"
-              >
-                <FaFacebook color="lightblue" size="45" />
-              </SocialLink>
-            </SocialWrapper>
-          </AnimatedWrapper>
-        </div>
-      </Waypoint>
+      <AnimatedItem
+        topOffset="200px"
+        enterAnimation={zoomIn}
+        leaveAnimation={zoomOut}
+      >
+        <Image
+          src="https://res.cloudinary.com/gojutin/image/upload/v1544936219/veganworks-logo.png"
+          alt="veganworks logo"
+        />
+        <Slogan className="cursive white">
+          We make delicious vegan snack boxes
+        </Slogan>
+        <SocialWrapper>
+          <SocialLink
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://amzn.to/2QFidX3"
+          >
+            <FaAmazon color="lightblue" size="50" />
+          </SocialLink>
+          <SocialLink
+            rel="noopener noreferrer"
+            target="_blank"
+            href="http://bit.ly/2PLgvOe"
+          >
+            <FaTwitter className="social" color="lightblue" size="50" />
+          </SocialLink>
+          <SocialLink
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://facebook.com/veganworkshq"
+          >
+            <FaFacebook color="lightblue" size="45" />
+          </SocialLink>
+        </SocialWrapper>
+      </AnimatedItem>
     </LogoSection>
   );
 }

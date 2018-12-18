@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.div`
-  height: 30px;
+  height: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #333;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
   font-family: 'Alice', sans-serif;
   padding: 0px 20px;
@@ -15,9 +15,9 @@ const StyledFooter = styled.div`
 function Footer() {
   return (
     <StyledFooter>
-      <small>info@veganworks.com</small>
-      <small>VeganWorks, Inc. 2018</small>
-      <small>631-403-0362</small>
+      <p>info@veganworks.com</p>
+      <p>VeganWorks, Inc. 2018</p>
+      <p>631-403-0362</p>
     </StyledFooter>
   );
 }

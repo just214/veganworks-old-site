@@ -1,12 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import ProductListing from './ProductListing';
-import Section from './Section';
 import { products } from '../data';
+
+const Section = styled.div`
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+`;
+
+Section.propTypes = {
+  bg: PropTypes.string,
+  center: PropTypes.bool,
+  full: PropTypes.bool,
+};
 
 function Products() {
   return (
-    <Section center bg="#fcfcfc">
+    <Section>
       <h1 className="cursive">Our Snack Boxes</h1>
       <Container style={{ padding: '15px' }}>
         <Row>

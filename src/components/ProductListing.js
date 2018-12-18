@@ -5,7 +5,7 @@ import { FaAmazon } from 'react-icons/fa';
 
 const Card = styled.div`
   margin: 5px;
-  background-color: white;
+  background-color: #f7f7f7;
   border-radius: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
