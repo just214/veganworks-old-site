@@ -4,7 +4,7 @@ import { fadeIn, fadeOut } from 'react-animations';
 import AnimatedItem from './AnimatedItem';
 
 const Wrapper = styled.div`
-  background: url('https://res.cloudinary.com/gojutin/image/upload/v1545165691/veganworks/community-solidarity-collage.png')
+  background: url('https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545165691/veganworks/community-solidarity-collage.png')
     no-repeat center center;
 
   max-width: 100vw;
@@ -52,7 +52,7 @@ function Community() {
             >
               <img
                 width="70%"
-                src="https://res.cloudinary.com/gojutin/image/upload/v1545156921/veganworks/community-solidarity-logo.png"
+                src="https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545156921/veganworks/community-solidarity-logo.png"
                 alt="Community Solidarity- Americas largest Vegetarian hunger relief program."
               />
             </a>

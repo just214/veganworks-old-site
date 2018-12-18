@@ -51,7 +51,7 @@ function Logo() {
         leaveAnimation={zoomOut}
       >
         <Image
-          src="https://res.cloudinary.com/gojutin/image/upload/v1545163193/veganworks/veganworks-logo.png"
+          src="https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545163193/veganworks/veganworks-logo.png"
           alt="veganworks logo"
         />
         <Slogan className="cursive white">
