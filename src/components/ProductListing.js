@@ -62,6 +62,7 @@ function ProductListing({ item }) {
       <div>
         <ShopButton>
           <a href={item.link} rel="noopener noreferrer" target="_blank">
+            <small style={{ display: 'none' }}>{item.link}</small>
             <FaAmazon color="#333" size="20" /> &nbsp;Shop Now
           </a>
         </ShopButton>

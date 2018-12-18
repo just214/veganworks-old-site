@@ -39,7 +39,12 @@ function Brands() {
               style={{ marginTop: '30px' }}
             >
               <div>
-                <Image cloudName="gojutin" height={80} publicId={brand} />
+                <Image
+                  cloudName="gojutin"
+                  height={80}
+                  publicId={brand}
+                  alt={brand}
+                />
               </div>
             </Col>
           ))}
