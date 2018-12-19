@@ -38,6 +38,7 @@ function ProductListing({ item }) {
         alt={item.title}
         style={{ maxHeight: '60vh', maxWidth: '100%' }}
       />
+
       <h2 style={{ margin: '5px' }}>
         <b>{item.title}</b>
       </h2>
@@ -59,7 +60,11 @@ function ProductListing({ item }) {
       )}
 
       <div
-        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+        }}
       >
         {item.tags.map(tag => (
           <Tag key={tag}>{tag}</Tag>
