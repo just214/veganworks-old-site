@@ -11,7 +11,6 @@ const Wrapper = styled.div`
   text-align: center;
   padding: 10px;
   min-height: 300px;
-
   background-image: linear-gradient(
     to bottom,
     #f1f1f1,
