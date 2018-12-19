@@ -6,7 +6,7 @@ const products = [
     availability: 'Available October through May',
     link: 'https://amzn.to/2Ln696F',
     photoUrl:
-      'https://res.cloudinary.com/gojutin/image/upload/v1545162191/veganworks/Snack%20Boxes/veganworks-holiday-snackbox.png',
+      'https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545162191/veganworks/Snack%20Boxes/veganworks-holiday-snackbox.png',
   },
   {
     title: 'Seasonal Vegan Snack Box',
@@ -15,7 +15,7 @@ const products = [
     availability: 'Available October through May',
     link: 'https://amzn.to/2PMGFjF',
     photoUrl:
-      'https://res.cloudinary.com/gojutin/image/upload/v1545162191/veganworks/Snack%20Boxes/veganworks-seasonal-snackbox.png',
+      'https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545162191/veganworks/Snack%20Boxes/veganworks-seasonal-snackbox.png',
   },
 
   {
@@ -26,7 +26,7 @@ const products = [
     tags: ['Vegan', 'Non-GMO', 'Gluten Free', 'Nut Free', 'Peanut Free'],
     link: 'https://amzn.to/2QN3M2l',
     photoUrl:
-      'https://res.cloudinary.com/gojutin/image/upload/v1545162191/veganworks/Snack%20Boxes/veganworks-kids-snackbox.png',
+      'https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545162191/veganworks/Snack%20Boxes/veganworks-kids-snackbox.png',
   },
 ];
 

@@ -13,7 +13,8 @@ const StyledSectionTitle = styled.h1`
 function SectionTitle(props) {
   return (
     <AnimatedItem
-      topOffset="100px"
+      topOffset="50px"
+      bottomOffset="100px"
       enterAnimation={fadeIn}
       leaveAnimation={fadeOut}
     >
