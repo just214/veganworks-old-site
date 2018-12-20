@@ -10,24 +10,24 @@ function App() {
   useEffect(() => {
     document.title = 'Home | VeganWorks';
 
-    fetch('https://www.veganworks.com/.netlify/functions/airtable-products')
-      .then(function(response) {
-        if (response.status !== 200) {
-          console.log(
-            'Looks like there was a problem. Status Code: ' + response.status,
-          );
-          return;
-        }
+  //   fetch('https://www.veganworks.com/.netlify/functions/airtable-products')
+  //     .then(function(response) {
+  //       if (response.status !== 200) {
+  //         console.log(
+  //           'Looks like there was a problem. Status Code: ' + response.status,
+  //         );
+  //         return;
+  //       }
 
-        // Examine the text in the response
-        response.json().then(function(data) {
-          console.log('HERE IT IS', data);
-        });
-      })
-      .catch(function(err) {
-        console.log('Fetch Error :-S', err);
-      });
-  }, []);
+  //       // Examine the text in the response
+  //       response.json().then(function(data) {
+  //         console.log('HERE IT IS', data);
+  //       });
+  //     })
+  //     .catch(function(err) {
+  //       console.log('Fetch Error :-S', err);
+  //     });
+  // }, []);
   return (
     <div>
       <Logo />
