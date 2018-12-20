@@ -7,11 +7,12 @@ import AnimatedItem from './AnimatedItem';
 const Wrapper = styled.div`
   background: url('https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545165691/veganworks/community-solidarity-collage.png')
     no-repeat center center;
-  z-index: 0;
   max-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
+  z-index: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   @media screen and (min-width: 768px) {
@@ -37,8 +38,8 @@ function Community() {
     <div>
       <Wrapper>
         <AnimatedItem
-          topOffset="200px"
-          bottomOffset="200px"
+          topOffset="600px"
+          bottomOffset="600px"
           enterAnimation={fadeIn}
           leaveAnimation={fadeOut}
         >

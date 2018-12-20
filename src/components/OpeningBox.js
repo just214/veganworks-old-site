@@ -85,7 +85,7 @@ function OpeningBox(props) {
     <Waypoint onEnter={handleEnter} onLeave={handleLeave}>
       <div ref={imgRef}>
         <img
-          style={{ width: '100%' }}
+          style={{ width: '80%' }}
           src={getRef(imageNumber)}
           alt="VeganWorks snack box opening as the page scrolls."
         />

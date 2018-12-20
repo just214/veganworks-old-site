@@ -23,31 +23,6 @@ function OpeningBox(props) {
     console.log('window Height:', windowHeight);
     console.log('POSITION', position, diff);
 
-    /*
-      -500 = 1
-      -250 = 4
-      100 = 8
-      250 = 12
-      500 = 16
-     */
-
-    /*
-      -500 = 1
-      -250 = 8
-      100 = 16
-  
-     */
-
-    // position + diff + 1
-
-    // position === 100
-    // perfectY === 100
-    // imageHeight === 600
-    // windowHeight === 800
-    // diff === 500
-    // image count === 16
-    // SHOULD BE 8
-
     const imageNumber =
       // 100/400 * 16
       (Math.abs(perfectY) / Math.abs(position)) * NUMBER_OF_IMAGES;
@@ -82,7 +57,7 @@ function OpeningBox(props) {
 
       const listener = window.addEventListener(
         'scroll',
-        throttle(setThePosition, 500),
+        throttle(setThePosition, 10),
       );
       listenerRef.current = listener;
 
@@ -111,7 +86,7 @@ function OpeningBox(props) {
     <Waypoint onEnter={handleEnter} onLeave={handleLeave}>
       <div ref={imgRef}>
         <img
-          style={{ width: '100%' }}
+          style={{ width: '60%', margin: '0 auto' }}
           src={getRef(imageNumber)}
           alt="VeganWorks snack box opening as the page scrolls."
         />
@@ -121,3 +96,28 @@ function OpeningBox(props) {
 }
 
 export default OpeningBox;
+
+/*
+      -500 = 1
+      -250 = 4
+      100 = 8
+      250 = 12
+      500 = 16
+     */
+
+/*
+      -500 = 1
+      -250 = 8
+      100 = 16
+  
+     */
+
+// position + diff + 1
+
+// position === 100
+// perfectY === 100
+// imageHeight === 600
+// windowHeight === 800
+// diff === 500
+// image count === 16
+// SHOULD BE 8
