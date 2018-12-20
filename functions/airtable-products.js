@@ -12,12 +12,6 @@ exports.handler = function(event, context, callback) {
     })
     .eachPage(
       function page(records, fetchNextPage) {
-        // This function (`page`) will get called for each page of records.
-
-        records.forEach(function(record) {
-          console.log('Retrieved', record.get('Name'));
-        });
-
         callback(null, {
           statusCode: 200,
           body: JSON.stringify(records),
