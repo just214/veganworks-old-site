@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Logo from './components/Logo';
 // import OpeningBox from './components/OpeningBox.2';
 import Products from './components/Products';
@@ -7,6 +7,9 @@ import Community from './components/Community';
 import Footer from './components/Footer';
 
 function App() {
+  useEffect(() => {
+    document.title = 'Welcome to VeganWorks!';
+  }, []);
   return (
     <div>
       <Logo />

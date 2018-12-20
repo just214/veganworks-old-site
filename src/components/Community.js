@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import LazyLoad from 'react-lazyload';
 import { fadeIn, fadeOut } from 'react-animations';
 import AnimatedItem from './AnimatedItem';
 
 const Wrapper = styled.div`
   background: url('https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545165691/veganworks/community-solidarity-collage.png')
     no-repeat center center;
-
+  z-index: 0;
   max-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
@@ -50,11 +51,13 @@ function Community() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                width="70%"
-                src="https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545156921/veganworks/community-solidarity-logo.png"
-                alt="Community Solidarity- Americas largest Vegetarian hunger relief program."
-              />
+              <LazyLoad height={80} offset={100}>
+                <img
+                  width="70%"
+                  src="https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545156921/veganworks/community-solidarity-logo.png"
+                  alt="Community Solidarity- Americas largest Vegetarian hunger relief program."
+                />
+              </LazyLoad>
             </a>
             <div style={{ margin: '0 auto' }}>
               <div>

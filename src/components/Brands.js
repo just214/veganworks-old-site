@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { brands } from '../data';
 import { Image } from 'cloudinary-react';
+import LazyLoad from 'react-lazyload';
 import SectionTitle from './SectionTitle';
 import AnimatedItem from './AnimatedItem';
 import { pulse } from 'react-animations';
@@ -38,12 +39,14 @@ function Brands() {
               style={{ marginTop: '30px' }}
             >
               <AnimatedItem enterAnimation={pulse} leaveAnimation={pulse} loop>
-                <Image
-                  cloudName="gojutin"
-                  height={80}
-                  publicId={brand}
-                  alt={brand}
-                />
+                <LazyLoad height={80} offset={100}>
+                  <Image
+                    cloudName="gojutin"
+                    height={80}
+                    publicId={brand}
+                    alt={brand}
+                  />
+                </LazyLoad>
               </AnimatedItem>
             </Col>
           ))}

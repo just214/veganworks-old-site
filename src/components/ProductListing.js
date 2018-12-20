@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import LazyLoad from 'react-lazyload';
 import { FaAmazon } from 'react-icons/fa';
 
 const ShopButton = styled.button`
@@ -33,11 +34,13 @@ const Tag = styled.span`
 function ProductListing({ item }) {
   return (
     <div className="alice">
-      <img
-        src={item.photoUrl}
-        alt={item.title}
-        style={{ maxHeight: '60vh', maxWidth: '100%' }}
-      />
+      <LazyLoad offset={100}>
+        <img
+          src={item.photoUrl}
+          alt={item.title}
+          style={{ maxHeight: '70vh', maxWidth: '100%' }}
+        />
+      </LazyLoad>
 
       <h2 style={{ margin: '5px' }}>
         <b>{item.title}</b>
