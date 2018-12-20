@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    document.title = 'Welcome to VeganWorks!';
+    document.title = 'Home | VeganWorks';
   }, []);
   return (
     <div>
