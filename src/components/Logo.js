@@ -62,6 +62,7 @@ function Logo() {
             rel="noopener noreferrer"
             target="_blank"
             href="https://amzn.to/2QFidX3"
+            aria-label="Link to Amazon"
           >
             <FaAmazon className="social" color="lightblue" size="50" />
           </SocialLink>
@@ -69,6 +70,7 @@ function Logo() {
             rel="noopener noreferrer"
             target="_blank"
             href="http://bit.ly/2PLgvOe"
+            aria-label="Link to Twitter"
           >
             <FaTwitter className="social" color="lightblue" size="50" />
           </SocialLink>
@@ -76,6 +78,7 @@ function Logo() {
             rel="noopener noreferrer"
             target="_blank"
             href="https://facebook.com/veganworkshq"
+            aria-label="Link to Facebook"
           >
             <FaFacebook className="social" color="lightblue" size="45" />
           </SocialLink>
