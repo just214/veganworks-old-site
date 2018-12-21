@@ -4,16 +4,24 @@ import LazyLoad from 'react-lazyload';
 
 // Sections
 import Logo from './components/Logo';
-import Brands from './components/Brands';
-import Products from './components/Products';
+// import Brands from './components/Brands';
+// import Products from './components/Products';
 // import Community from './components/Community';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 
-// const Brands = lazy(() => import('./components/Brands'));
-// const Products = lazy(() => import('./components/Products'));
+const Brands = lazy(() => import('./components/Brands'));
+const Products = lazy(() => import('./components/Products'));
 const CommunityMeter = lazy(() => import('./components/CommunityMeter'));
 const Community = lazy(() => import('./components/Community'));
-// const Footer = lazy(() => import('./components/Footer'));
+const Footer = lazy(() => import('./components/Footer'));
+
+function LazyWrapper(props) {
+  return (
+    <LazyLoad offset={100}>
+      <Suspense fallback={<div>Loading...</div>}>{props.children}</Suspense>
+    </LazyLoad>
+  );
+}
 
 function App() {
   useEffect(() => {
@@ -33,20 +41,22 @@ function App() {
   return (
     <>
       <Logo />
-      <Products />
-      <Brands />
-      <LazyLoad offset={100}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Community />
-        </Suspense>
-      </LazyLoad>
+      <LazyWrapper>
+        <Products />
+      </LazyWrapper>
 
-      <LazyLoad offset={100}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <CommunityMeter />
-        </Suspense>
-      </LazyLoad>
-      <Footer />
+      <LazyWrapper>
+        <Brands />
+      </LazyWrapper>
+      <LazyWrapper>
+        <Community />
+      </LazyWrapper>
+      <LazyWrapper>
+        <CommunityMeter />
+      </LazyWrapper>
+      <LazyWrapper>
+        <Footer />
+      </LazyWrapper>
     </>
   );
 }
