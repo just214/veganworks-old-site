@@ -49,27 +49,17 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <>
       <SideBar />
-      <div id="overlay">
-        <Logo />
-        <LazyWrapper render={Products} />
-        <LazyWrapper render={Brands} />
-        <LazyWrapper render={Community} />
-        <LazyWrapper render={CommunityMeter} />
-        <LazyWrapper render={Footer} />
-      </div>
-    </div>
+
+      <Logo />
+      <LazyWrapper render={Products} />
+      <LazyWrapper render={Brands} />
+      <LazyWrapper render={Community} />
+      <LazyWrapper render={CommunityMeter} />
+      <LazyWrapper render={Footer} />
+    </>
   );
 }
 
 export default App;
-
-//  {/* <a
-//       className="twitter-timeline"
-//       data-width="100"
-//       data-theme="dark"
-//       href="https://twitter.com/VeganWorksHQ?ref_src=twsrc%5Etfw"
-//     >
-//       Tweets by VeganWorksHQ
-//     </a> */}

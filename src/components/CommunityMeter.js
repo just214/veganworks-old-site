@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useMutationEffect, useRef } from 'react';
 import Gauge from 'react-svg-gauge';
 import Waypoint from 'react-waypoint';
 
@@ -8,7 +8,7 @@ function CommunityMeter() {
   const [isVisible, setIsVisible] = useState(false);
   const interval = useRef();
 
-  useEffect(
+  useMutationEffect(
     () => {
       interval.current = setInterval(() => {
         if (!isVisible) return;
