@@ -3,8 +3,8 @@ import { default as styledLogs } from 'styled-logs';
 import LazyLoad from 'react-lazyload';
 
 import Logo from './components/Logo';
-import SideBar from './components/SideBar';
 
+const SideBar = lazy(() => import('./components/SideBar'));
 const Brands = lazy(() => import('./components/Brands'));
 const Products = lazy(() => import('./components/Products'));
 const CommunityMeter = lazy(() => import('./components/CommunityMeter'));
@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>
-      <SideBar />
+      <LazyWrapper render={SideBar} />
 
       <Logo />
       <LazyWrapper render={Products} />
