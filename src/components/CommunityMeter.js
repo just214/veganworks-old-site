@@ -26,7 +26,6 @@ function CommunityMeter() {
 
   useEffect(
     () => {
-      console.log('COUNT');
       if (!isVisible) return;
       if (count === FINAL_COUNT) {
         clearInterval(interval.current);

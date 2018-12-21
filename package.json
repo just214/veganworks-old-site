@@ -20,7 +20,8 @@
     "react-svg-gauge": "^1.0.10",
     "react-waypoint": "^8.1.0",
     "styled-components": "^4.1.2",
-    "styled-logs": "^0.0.10"
+    "styled-logs": "^0.0.10",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
