@@ -2,12 +2,8 @@ import React, { useEffect, Suspense, lazy } from 'react';
 import { default as styledLogs } from 'styled-logs';
 import LazyLoad from 'react-lazyload';
 
-// Sections
 import Logo from './components/Logo';
-// import Brands from './components/Brands';
-// import Products from './components/Products';
-// import Community from './components/Community';
-// import Footer from './components/Footer';
+import SideBar from './components/SideBar';
 
 const Brands = lazy(() => import('./components/Brands'));
 const Products = lazy(() => import('./components/Products'));
@@ -15,10 +11,12 @@ const CommunityMeter = lazy(() => import('./components/CommunityMeter'));
 const Community = lazy(() => import('./components/Community'));
 const Footer = lazy(() => import('./components/Footer'));
 
-function LazyWrapper(props) {
+function LazyWrapper({ render: Render }) {
   return (
     <LazyLoad offset={100}>
-      <Suspense fallback={<div>Loading...</div>}>{props.children}</Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Render />
+      </Suspense>
     </LazyLoad>
   );
 }
@@ -51,25 +49,17 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Logo />
-      <LazyWrapper>
-        <Products />
-      </LazyWrapper>
-
-      <LazyWrapper>
-        <Brands />
-      </LazyWrapper>
-      <LazyWrapper>
-        <Community />
-      </LazyWrapper>
-      <LazyWrapper>
-        <CommunityMeter />
-      </LazyWrapper>
-      <LazyWrapper>
-        <Footer />
-      </LazyWrapper>
-    </>
+    <div>
+      <SideBar />
+      <div id="overlay">
+        <Logo />
+        <LazyWrapper render={Products} />
+        <LazyWrapper render={Brands} />
+        <LazyWrapper render={Community} />
+        <LazyWrapper render={CommunityMeter} />
+        <LazyWrapper render={Footer} />
+      </div>
+    </div>
   );
 }
 
