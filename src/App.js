@@ -1,33 +1,53 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import Logo from './components/Logo';
-import Products from './components/Products';
-import Brands from './components/Brands';
-import Community from './components/Community';
+import { default as styledLogs } from 'styled-logs';
 import LazyLoad from 'react-lazyload';
-// import TwitterDrawer from './components/TwitterDrawer';
+
+// Sections
+import Logo from './components/Logo';
+import Brands from './components/Brands';
+import Products from './components/Products';
+// import Community from './components/Community';
 import Footer from './components/Footer';
+
+// const Brands = lazy(() => import('./components/Brands'));
+// const Products = lazy(() => import('./components/Products'));
 const CommunityMeter = lazy(() => import('./components/CommunityMeter'));
+const Community = lazy(() => import('./components/Community'));
+// const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   useEffect(() => {
     document.title = 'Home | VeganWorks';
+    const Log = styledLogs.log`
+      background: url('https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545163193/veganworks/veganworks-logo.png')
+        no-repeat center center;
+      background-size: contain;
+      padding: 10px;
+      margin: 10px auto;
+      text-align: center;
+      font: 700 80px 'Alice';
+    `;
+    Log`                                                           `;
   }, []);
 
   return (
-    <div style={{ width: '100%' }}>
-      {/* <TwitterDrawer /> */}
+    <>
       <Logo />
-
       <Products />
       <Brands />
-      <Community />
-      <LazyLoad height={500} offset={100}>
+      <LazyLoad offset={100}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Community />
+        </Suspense>
+      </LazyLoad>
+
+      <LazyLoad offset={100}>
         <Suspense fallback={<div>Loading...</div>}>
           <CommunityMeter />
         </Suspense>
       </LazyLoad>
       <Footer />
-    </div>
+    </>
   );
 }
 

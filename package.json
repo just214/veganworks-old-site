@@ -19,7 +19,8 @@
     "react-sidebar": "^3.0.2",
     "react-svg-gauge": "^1.0.10",
     "react-waypoint": "^8.1.0",
-    "styled-components": "^4.1.2"
+    "styled-components": "^4.1.2",
+    "styled-logs": "^0.0.10"
   },
   "scripts": {
     "start": "react-scripts start",

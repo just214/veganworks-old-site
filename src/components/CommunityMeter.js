@@ -10,8 +10,8 @@ function CommunityMeter() {
 
   useEffect(
     () => {
-      console.log('nowd');
       interval.current = setInterval(() => {
+        if (!isVisible) return;
         setCount(count => {
           if (count >= FINAL_COUNT) {
             return FINAL_COUNT;
@@ -26,7 +26,7 @@ function CommunityMeter() {
 
   useEffect(
     () => {
-      console.log('now');
+      console.log('COUNT');
       if (!isVisible) return;
       if (count === FINAL_COUNT) {
         clearInterval(interval.current);

@@ -9623,6 +9623,11 @@ styled-components@^4.1.2:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
+styled-logs@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/styled-logs/-/styled-logs-0.0.10.tgz#b33ae214bef168b3b115732ea0a7a3f9a49cb121"
+  integrity sha512-vNg/pmyXU/Gr3UebQw9csoJKRz2IeO82iSNIrUI9fcg/6oy/+T3TG2BFhHgwhgUx1u55OWZfa3/syTSXJU0XeA==
+
 stylehacks@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/stylehacks/-/stylehacks-4.0.1.tgz#3186595d047ab0df813d213e51c8b94e0b9010f2"
