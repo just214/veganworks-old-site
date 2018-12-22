@@ -1,10 +1,10 @@
 exports.handler = function(event, context, callback) {
   var Airtable = require('airtable');
   var base = new Airtable({ apiKey: 'keyzGgOdWawCB8eHv' }).base(
-    'appGRQwm7dT9KfxIP',
+    'app2RbUQthPAlw0mx',
   );
 
-  base('Bundles')
+  base('Units Sold')
     .select({
       // Selecting the first 3 records in Grid view:
       maxRecords: 1000,
@@ -13,10 +13,18 @@ exports.handler = function(event, context, callback) {
     .eachPage(
       function page(records, fetchNextPage) {
         // This function (`page`) will get called for each page of records.
+        let count = 0;
+        records.forEach(function(record) {
+          count += +record.get('Units Sold');
+        });
+
+        let poundsPerDollar = 8;
+
+        let poundsOfGroceries = Math.round(count * 0.25 * poundsPerDollar);
 
         callback(null, {
           statusCode: 200,
-          body: JSON.stringify(records),
+          body: JSON.stringify(poundsOfGroceries),
         });
 
         // To fetch the next page of records, call `fetchNextPage`.

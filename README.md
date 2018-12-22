@@ -42,23 +42,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-    //   fetch('https://www.veganworks.com/.netlify/functions/airtable-products')
-    //     .then(function(response) {
-    //       if (response.status !== 200) {
-    //         console.log(
-    //           'Looks like there was a problem. Status Code: ' + response.status,
-    //         );
-    //         return;
-    //       }
-
-    //       // Examine the text in the response
-    //       response.json().then(function(data) {
-    //         console.log('HERE IT IS', data);
-    //       });
-    //     })
-    //     .catch(function(err) {
-    //       console.log('Fetch Error :-S', err);
-    //     });
-
-}, []);

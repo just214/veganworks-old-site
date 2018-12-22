@@ -3,7 +3,6 @@ import Gauge from 'react-svg-gauge';
 import Waypoint from 'react-waypoint';
 
 function CommunityMeter() {
-  const FINAL_COUNT = 814;
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const interval = useRef();
@@ -13,8 +12,8 @@ function CommunityMeter() {
       interval.current = setInterval(() => {
         if (!isVisible) return;
         setCount(count => {
-          if (count >= FINAL_COUNT) {
-            return FINAL_COUNT;
+          if (count >= pounds) {
+            return pounds;
           } else {
             return count + 5;
           }
@@ -27,12 +26,35 @@ function CommunityMeter() {
   useEffect(
     () => {
       if (!isVisible) return;
-      if (count === FINAL_COUNT) {
+      if (count === pounds) {
         clearInterval(interval.current);
       }
     },
     [count],
   );
+
+  const [pounds, setPounds] = useState(0);
+
+  useEffect(() => {
+    fetch('https://www.veganworks.com/.netlify/functions/airtable-products')
+      .then(function(response) {
+        if (response.status !== 200) {
+          console.log(
+            'Looks like there was a problem. Status Code: ' + response.status,
+          );
+          return;
+        }
+
+        // Examine the text in the response
+        response.json().then(function(data) {
+          setPounds(data);
+          console.log('HERE IT IS', data);
+        });
+      })
+      .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+      });
+  }, []);
 
   function handleEnter() {
     setIsVisible(true);
