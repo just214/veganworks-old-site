@@ -21,7 +21,7 @@ function CommunityMeter() {
         });
       }, 20);
     },
-    [isVisible],
+    [isVisible, pounds],
   );
 
   useEffect(
