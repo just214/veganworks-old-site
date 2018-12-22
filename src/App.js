@@ -24,18 +24,19 @@ function LazyWrapper({ render: Render }) {
 
 function App() {
   useEffect(() => {
-    function chimp(c, h, i, m, p) {
-      m = c.createElement(h);
-      p = c.getElementsByTagName(h)[0];
-      m.async = 1;
-      m.src = i;
-      p.parentNode.insertBefore(m, p);
-    }
-    chimp(
-      document,
-      'script',
-      'https://chimpstatic.com/mcjs-connected/js/users/6cf9a8328459668743d132ab4/477fa833ad4737842edddfd52.js',
-    );
+    // function chimp(c, h, i, m, p) {
+    //   m = c.createElement(h);
+    //   p = c.getElementsByTagName(h)[0];
+    //   m.async = 1;
+    //   m.src = i;
+    //   p.parentNode.insertBefore(m, p);
+    // }
+    // chimp(
+    //   document,
+    //   'script',
+    //   'https://chimpstatic.com/mcjs-connected/js/users/6cf9a8328459668743d132ab4/477fa833ad4737842edddfd52.js',
+    // );
+
     document.title = 'Home | VeganWorks';
     const Log = styledLogs.log`
       background: url('https://res.cloudinary.com/gojutin/image/upload/f_auto/v1545163193/veganworks/veganworks-logo.png')
@@ -47,6 +48,9 @@ function App() {
       font: 700 80px 'Alice';
     `;
     Log`                                                           `;
+    return () => {
+      document.scrollTo(0, 0);
+    };
   }, []);
 
   return (

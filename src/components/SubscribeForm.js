@@ -5,7 +5,6 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-direction: column;
   padding: 20px 5px;
 `;
@@ -51,10 +50,7 @@ function SubscribeForm() {
     const url = 'https://www.veganworks.com/.netlify/functions/addSubscriber';
     fetch(url, {
       method: 'POST',
-      body: {
-        email_address: email,
-        status: 'subscribed',
-      },
+      body: email,
     })
       .then(data => {
         setSubscribed(true);
