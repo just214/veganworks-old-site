@@ -43,7 +43,7 @@ function ProductListing({ item }) {
       </LazyLoad>
 
       <h2 style={{ margin: '5px' }}>
-        <b>{item.title}</b>
+        <b>{item.name}</b>
       </h2>
 
       <div>
@@ -52,14 +52,14 @@ function ProductListing({ item }) {
 
       {item.salePrice ? (
         <h2 style={{ margin: '5px' }}>
-          <span style={{ textDecoration: 'line-through' }}>{item.price}</span>{' '}
-          <span style={{ color: 'green' }}>{item.salePrice} </span>
+          <span style={{ textDecoration: 'line-through' }}>${item.price}</span>{' '}
+          <span style={{ color: 'green' }}>${item.salePrice} </span>
           <Tag bg="green" color="white">
             Sale
           </Tag>
         </h2>
       ) : (
-        <h2 style={{ margin: '5px' }}>{item.price}</h2>
+        <h2 style={{ margin: '5px' }}>${item.price}</h2>
       )}
 
       <div
@@ -80,7 +80,7 @@ function ProductListing({ item }) {
             href={item.link}
             rel="noopener noreferrer"
             target="_blank"
-            aria-label={item.title}
+            aria-label={item.name}
           >
             <FaAmazon color="#333" size="20" /> &nbsp;Shop Now
           </a>

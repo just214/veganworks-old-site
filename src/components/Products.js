@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import ProductListing from './ProductListing';
 import SectionTitle from './SectionTitle';
-import { products as hardcodedProducts } from '../data';
 
 const Section = styled.div`
   padding: 10px;
@@ -30,8 +29,11 @@ Section.propTypes = {
 
 function Products() {
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'development') return;
+
     fetch('https://www.veganworks.com/.netlify/functions/airtable-snack-boxes')
       .then(function(response) {
         if (response.status !== 200) {
@@ -46,13 +48,17 @@ function Products() {
           data.forEach(item => {
             console.log('ITEM', item.name, item.price, item.image);
           });
-          setProducts(data || hardcodedProducts);
+          setProducts(data);
         });
       })
       .catch(function(err) {
-        console.log('Fetch Error :-S', err);
+        setError(true);
       });
   }, []);
+
+  if (error) {
+    return <div>Oops.there was an error.</div>;
+  }
 
   return (
     <Section>
