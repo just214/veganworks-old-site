@@ -2,17 +2,43 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+  padding: 20px 5px;
 `;
 
 const H3 = styled.h3`
   color: lightgray;
 `;
 
+const Input = styled.input`
+  border-radius: 20px;
+  font-size: 20px;
+  border: none;
+  padding: 5px 15px;
+  width: 200px;
+`;
+
+const Button = styled.button`
+  border-radius: 30px;
+  background-color: lightblue;
+  height: 35px;
+  width: 70px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+`;
+
 function SubscribeForm() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
-  const [subscribed, setSubscribed] = useState(true);
+  const [subscribed, setSubscribed] = useState(false);
 
   function handleSubscribe(e) {
     setError('');
@@ -42,6 +68,7 @@ function SubscribeForm() {
     return (
       <Wrapper>
         <h3 style={{ color: 'lightblue' }}>Thanks for subscribing!</h3>
+
         <p style={{ color: 'lightgray' }}>
           We will let you know of any upcoming sales or new products.
         </p>
@@ -51,20 +78,27 @@ function SubscribeForm() {
 
   return (
     <Wrapper>
-      <H3>Subscribe to stay up to date about our latest snack boxes!</H3>
-      <form onSubmit={handleSubscribe}>
-        <input
+      <H3 className="alice">
+        Subscribe to stay up to date about our latest snack boxes!
+      </H3>
+      <form
+        onSubmit={handleSubscribe}
+        style={{ display: 'flex', alignItems: 'center' }}
+      >
+        <Input
+          placeholder="Email Address"
           value={email}
           onChange={e => setEmail(e.target.value)}
           type="text"
+          className="alice"
         />
-        <button tyle="submit" onClick={handleSubscribe}>
+        <Button className="alice" type="submit" onClick={handleSubscribe}>
           Join!
-        </button>
-        <div style={{ height: '50px' }}>
-          {error && <p style={{ color: 'tomato', margin: '5px' }}>{error}</p>}
-        </div>
+        </Button>
       </form>
+      <div style={{ height: '50px' }}>
+        {error && <p style={{ color: 'tomato', margin: '5px' }}>{error}</p>}
+      </div>
     </Wrapper>
   );
 }
