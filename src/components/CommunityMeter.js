@@ -20,7 +20,7 @@ function CommunityMeter() {
             return count + 5;
           }
         });
-      }, 20);
+      }, 15);
     },
     [isVisible, pounds],
   );
@@ -36,6 +36,10 @@ function CommunityMeter() {
   );
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      return setPounds(Math.round(850));
+    }
+
     fetch('https://www.veganworks.com/.netlify/functions/airtable-units-sold')
       .then(function(response) {
         if (response.status !== 200) {

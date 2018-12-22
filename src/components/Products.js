@@ -37,17 +37,12 @@ function Products() {
     fetch('https://www.veganworks.com/.netlify/functions/airtable-snack-boxes')
       .then(function(response) {
         if (response.status !== 200) {
-          console.log(
-            'Looks like there was a problem. Status Code: ' + response.status,
-          );
+          setError(true);
           return;
         }
 
         // Examine the text in the response
         response.json().then(function(data) {
-          data.forEach(item => {
-            console.log('ITEM', item.name, item.price, item.image);
-          });
           setProducts(data);
         });
       })
@@ -62,16 +57,20 @@ function Products() {
 
   return (
     <Section>
-      <SectionTitle>Our Snack Boxes</SectionTitle>
-      <Container style={{ padding: '15px' }}>
-        <Row>
-          {products.map(item => (
-            <Col key={item.title} xs={12} sm={12} md={6} lg={6} xl={6}>
-              <ProductListing item={item} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      {!!products.length && (
+        <>
+          <SectionTitle>Our Snack Boxes</SectionTitle>
+          <Container style={{ padding: '15px' }}>
+            <Row>
+              {products.map(item => (
+                <Col key={item.title} xs={12} sm={12} md={6} lg={6} xl={6}>
+                  <ProductListing item={item} />
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </>
+      )}
     </Section>
   );
 }

@@ -8,7 +8,7 @@ exports.handler = function(event, context, callback) {
     .select({
       // Selecting the first 3 records in Grid view:
       maxRecords: 1000,
-      view: 'Grid view',
+      view: 'Website',
       filterByFormula: 'NOT({isLive} = "")',
     })
     .eachPage(

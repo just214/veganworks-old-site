@@ -1,3 +1,7 @@
+// This is not being used right now as the data is being delivered via
+// the Airtable API and lambda function. Depending on cost of lambda functions,
+// we might want to move is back to this hard-coded version.
+
 const products = [
   {
     name: 'Holiday Vegan Snack Box',
