@@ -5,6 +5,7 @@ import Waypoint from 'react-waypoint';
 function CommunityMeter() {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [pounds, setPounds] = useState(0);
   const interval = useRef();
 
   useMutationEffect(
@@ -33,10 +34,8 @@ function CommunityMeter() {
     [count],
   );
 
-  const [pounds, setPounds] = useState(0);
-
   useEffect(() => {
-    fetch('https://www.veganworks.com/.netlify/functions/airtable-products')
+    fetch('https://www.veganworks.com/.netlify/functions/airtable-bundles')
       .then(function(response) {
         if (response.status !== 200) {
           console.log(
