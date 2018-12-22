@@ -10,6 +10,7 @@ const Products = lazy(() => import('./components/Products'));
 const CommunityMeter = lazy(() => import('./components/CommunityMeter'));
 const Community = lazy(() => import('./components/Community'));
 const Footer = lazy(() => import('./components/Footer'));
+const SubscribeForm = lazy(() => import('./components/SubscribeForm'));
 
 function LazyWrapper({ render: Render }) {
   return (
@@ -53,6 +54,7 @@ function App() {
       <LazyWrapper render={SideBar} />
 
       <Logo />
+      <LazyWrapper render={SubscribeForm} />
       <LazyWrapper render={Products} />
       <LazyWrapper render={Brands} />
       <LazyWrapper render={Community} />
