@@ -36,8 +36,8 @@ function ProductListing({ item }) {
     <div className="alice">
       <LazyLoad offset={100}>
         <img
-          src={item.photoUrl}
-          alt={item.title}
+          src={item.image}
+          alt={item.name}
           style={{ maxHeight: '70vh', maxWidth: '100%' }}
         />
       </LazyLoad>

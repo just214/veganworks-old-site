@@ -36,7 +36,7 @@ function CommunityMeter() {
   );
 
   useEffect(() => {
-    fetch('https://www.veganworks.com/.netlify/functions/airtable-bundles')
+    fetch('https://www.veganworks.com/.netlify/functions/airtable-units-sold')
       .then(function(response) {
         if (response.status !== 200) {
           console.log(
