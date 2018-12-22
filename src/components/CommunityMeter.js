@@ -6,6 +6,7 @@ function CommunityMeter() {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [pounds, setPounds] = useState(0);
+  const [max, setMax] = useState(1000);
   const interval = useRef();
 
   useMutationEffect(
@@ -46,8 +47,8 @@ function CommunityMeter() {
 
         // Examine the text in the response
         response.json().then(function(data) {
+          setMax(Math.round(data * 1.3));
           setPounds(data);
-          console.log('HERE IT IS', data);
         });
       })
       .catch(function(err) {
@@ -78,7 +79,7 @@ function CommunityMeter() {
           width={350}
           height={250}
           min={0}
-          max={1000}
+          max={max}
           color="green"
           backgroundColor="lightgray"
           valueLabelStyle={{ fill: 'lightgray' }}
