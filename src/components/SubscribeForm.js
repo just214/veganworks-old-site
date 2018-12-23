@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,17 +16,19 @@ const H3 = styled.h3`
 
 const Input = styled.input`
   border-radius: 20px;
-  font-size: 20px;
+  background-color: #333;
+  font-size: 18px;
   border: none;
   padding: 5px 15px;
   width: 200px;
+  color: white;
 `;
 
 const Button = styled.button`
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: lightblue;
-  height: 35px;
-  width: 70px;
+  height: 30px;
+
   font-weight: bold;
   text-transform: uppercase;
   color: #333;
@@ -42,7 +45,7 @@ function SubscribeForm() {
   function handleSubscribe(e) {
     setError('');
     e.preventDefault();
-    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       setError('Please enter a valid email address.');
       return;
     }
@@ -75,7 +78,8 @@ function SubscribeForm() {
   return (
     <Wrapper>
       <H3 className="alice">
-        Subscribe to stay up to date about our latest snack boxes!
+        <b style={{ color: 'lightblue', fontSize: '1.2em' }}>Subscribe</b> and
+        stay up to date about our upcoming products and promotions!
       </H3>
       <form
         onSubmit={handleSubscribe}
@@ -88,13 +92,24 @@ function SubscribeForm() {
           type="text"
           className="alice"
         />
+
         <Button className="alice" type="submit" onClick={handleSubscribe}>
-          Join!
+          Subscribe!
         </Button>
       </form>
-      <div style={{ height: '50px' }}>
+      <div style={{ height: '30px' }}>
         {error && <p style={{ color: 'tomato', margin: '5px' }}>{error}</p>}
       </div>
+
+      <h3 className="alice lightgray">Prefer Twitter?</h3>
+
+      <a
+        className="twitter-follow-button"
+        href="https://twitter.com/VeganWorksHQ"
+        data-size="large"
+      >
+        Follow @VeganWorksHQ
+      </a>
     </Wrapper>
   );
 }
