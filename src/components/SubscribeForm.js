@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 20px 5px;
+  padding: 20px 8px;
 `;
 
 const H3 = styled.h3`
@@ -22,14 +22,16 @@ const Input = styled.input`
   padding: 5px 15px;
   width: 200px;
   color: white;
+  width: 320px;
+  height: 35px;
 `;
 
 const Button = styled.button`
   border-radius: 20px;
   background-color: lightblue;
-  height: 30px;
-
+  height: 35px;
   font-weight: bold;
+
   text-transform: uppercase;
   color: #333;
   font-size: 16px;
@@ -83,15 +85,22 @@ function SubscribeForm() {
       </H3>
       <form
         onSubmit={handleSubscribe}
-        style={{ display: 'flex', alignItems: 'center' }}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+        }}
       >
-        <Input
-          placeholder="Email Address"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          type="text"
-          className="alice"
-        />
+        <div style={{ width: '100%', margin: '10px' }}>
+          <Input
+            placeholder="Email Address"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            type="text"
+            className="alice"
+          />
+        </div>
 
         <Button className="alice" type="submit" onClick={handleSubscribe}>
           Subscribe!
@@ -100,16 +109,6 @@ function SubscribeForm() {
       <div style={{ height: '30px' }}>
         {error && <p style={{ color: 'tomato', margin: '5px' }}>{error}</p>}
       </div>
-
-      <h3 className="alice lightgray">Prefer Twitter?</h3>
-
-      <a
-        className="twitter-follow-button"
-        href="https://twitter.com/VeganWorksHQ"
-        data-size="large"
-      >
-        Follow @VeganWorksHQ
-      </a>
     </Wrapper>
   );
 }

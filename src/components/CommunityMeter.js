@@ -5,7 +5,7 @@ import Waypoint from 'react-waypoint';
 function CommunityMeter() {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [pounds, setPounds] = useState(0);
+  const [pounds, setPounds] = useState(900);
   const [max, setMax] = useState(1000);
   const interval = useRef();
 
@@ -37,7 +37,7 @@ function CommunityMeter() {
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
-      return setPounds(Math.round(850));
+      return setPounds(Math.round(900));
     }
 
     fetch('https://www.veganworks.com/.netlify/functions/airtable-units-sold')
