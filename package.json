@@ -40,7 +40,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "babel-loader": "^8.0.4"
-  }
+  "devDependencies": {}
 }
