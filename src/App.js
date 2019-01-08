@@ -59,7 +59,9 @@ function App() {
 
       <Logo />
       <LazyWrapper render={SubscribeForm} />
-      <LazyWrapper render={Products} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Products />
+      </Suspense>
       <LazyWrapper render={Brands} />
       <LazyWrapper render={Community} />
       <LazyWrapper render={CommunityMeter} />
